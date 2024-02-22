@@ -75,7 +75,7 @@ def send_emails(email, password):
         option_msg = input("Do you want to send a message from a .txt file or write a message yourself?\n1) From .txt file\n2) Write it myself\n")
 
     if option_msg == "1":
-        message_path = input("(e.g C:\\Path\\to\\email.txt) \nEnter the path to the message .txt file: ")
+        message_path = input("(e.g C:\\Path\\to\\message.txt) \nEnter the path to the message .txt file: ")
         print_colored_banner()
         with open(message_path, 'r') as message_file:
             msg = message_file.read()
@@ -103,7 +103,7 @@ def send_emails(email, password):
 def main():
     email = input("Enter Your Email (gmail only): ")
 
-    password = getpass.getpass("Enter your App Password: ")
+    password = input("Enter your App Password: ")
 
     print("Attempting login...")
     server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -127,4 +127,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
